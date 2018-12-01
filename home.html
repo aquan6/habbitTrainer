@@ -7,35 +7,107 @@
         <meta charset="UTF-8">
 		<title>Habbit Trainer</title>
 		<style>
-		#navWrapper {
-			width:100%;
-			height:50px;
-			background-color: #ff2e2e;
-		}
-		#navBar {
-			display:flex;
-			align-items: center;
-			width:100%;
-			height:25px;
-			background-color: #ff2e2e;
-		}
-		#Tasks {
-			color: white;
-			height:25px;
-			width:25%;
-			float: left;
-			border: 1px solid white;
-		}
+			#pageWrapper {
+				height:1000px;
+				width:100%;
+				border: 1px solid black;
+			}
+			#whiteSpaceBar {
+				width: 100%;
+				height:25px;
+				background-color: #9DC462;
+				color:white;
+				text-transform: uppercase;
+			}
+			#logo {
+				height:25px;
+				width:25px;
+			}
+			#navBar {
+				width:100%;
+				height:35px;
+				background-color: #D46A6A;
+				display: flex;
+				justify-content: flex-start;
+				border: 1px solid white;
+			}
+			
+			#navBox {
+				width: 100px;
+				height: 35px;
+				color:white;
+				outline-offset-top: 10px;
+				padding-left: 20px;
+				border: 1px solid white;
+			}
+			a {
+				text-decoration: none;
+			}
+
+			#theBody {
+				width:100%;
+				height:940px;
+				background-color: #9DC462;
+				display: flex;
+				justify-content: flex-start;
+			}
+			#ToDoList {
+				height:400px;
+				width: 200px;
+				background-color:white;
+				margin-left: 10px;
+				margin-right:10px;
+				margin-top:10px;
+				border: 1px solid red;
+
+			}
+			#Dailies {
+				height:400px;
+				width: 200px;
+				background-color:white;
+				margin-left: 10px;
+				margin-right:10px;
+				margin-top:10px;
+				border: 1px solid blue;
+			}
+			#NameBar {
+				background-color: #D46A6A; 
+				color:white;
+				width:200px;
+				height:20px;
+			}
  		</style>
 	</head>
 	<body>
-		<div id="navWrapper">
-			<div id="navBar"> 
-				<!--Some buttons Here -->
-				<div id= "Tasks"> Tasks</div>
+	<div id="pageWrapper" >
+		<div id="whiteSpaceBar"> 
+			<img id="logo" src="pokeball.jpg"> 
+			Habbit Trainer
+		</div>
+		<div id="navBar">
+			<a href ="">
+				<div id ="navBox"> 
+					Tasks
+				</div>
+			</a>
+			<a href="">
+				<div id ="navBox"> 
+					Pokedex
+				</div>
+			</a>
+		</div>
+		<div id="theBody"> 
+			<div id="ToDoList"> 
+				<div id="NameBar"> 
+					To Do List
+				</div>
+			</div>
+			<div id="Dailies">
+				<div id="NameBar"> 
+					Dailies
+				</div>
 			</div>
 		</div>
-		<div id="someBar"> </div>
-		<div id="mainBody"> </div>
+	</div>
 	</body>
 </html>
