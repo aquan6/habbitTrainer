@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <script src=""></script>
+        <script src="habbitTrainer.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <meta charset="UTF-8">
 		<title>Habbit Trainer</title>
@@ -51,7 +51,7 @@
 				display: flex;
 				justify-content: flex-start;
 			}
-			#ToDoList {
+			#ToDoList, #Dailies  {
 				height:400px;
 				width: 200px;
 				background-color:white;
@@ -59,22 +59,22 @@
 				margin-right:10px;
 				margin-top:10px;
 				border: 1px solid red;
+			}
 
-			}
-			#Dailies {
-				height:400px;
-				width: 200px;
-				background-color:white;
-				margin-left: 10px;
-				margin-right:10px;
-				margin-top:10px;
-				border: 1px solid blue;
-			}
 			#NameBar {
 				background-color: #D46A6A; 
 				color:white;
 				width:200px;
 				height:20px;
+			}
+			#tdlAddField, #dailiesAddField {
+				height:20px;
+				width:200px;
+			}
+			#ToDoListContent, #DailiesContent {
+				height:360px;
+				width:200px;
+			
 			}
  		</style>
 	</head>
@@ -100,11 +100,23 @@
 			<div id="ToDoList"> 
 				<div id="NameBar"> 
 					To Do List
+					<div id="tdlAddField"> 
+						<input id="tdlTextField" type="text"> 
+						<button type="button" onclick="addTDLTask()">Add</button>
+					</div>
+					<div id="ToDoListContent">
+					</div>
 				</div>
 			</div>
 			<div id="Dailies">
 				<div id="NameBar"> 
 					Dailies
+					<div id="dailiesAddField"> 
+						<input id="dailiesTextField" type="text"> 
+						<button type="button">Add</button>
+					</div>
+					<div id="DailiesContent"> 
+					</div>
 				</div>
 			</div>
 		</div>
