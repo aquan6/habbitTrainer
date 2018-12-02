@@ -1,5 +1,5 @@
 #pageWrapper {
-	height:1000px;
+	height:100%;
 	width:100%;
 	border: 1px solid black;
 }
@@ -38,11 +38,20 @@ a {
 
 #theBody {
 	width:100%;
-	height:940px;
+	height:440px;
 	background-color: #9DC462;
 	display: flex;
 	justify-content: center;
 }
+
+#body2 {
+	width:100%;
+	height:440px;
+	background-color: #9DC462;
+	display: flex;
+	justify-content: center;
+}
+
 #ToDoList{
 	height:400px;
 	width: 270px;
@@ -51,6 +60,17 @@ a {
 	margin-right:10px;
 	margin-top:10px;
 	border: 1px solid red;
+}
+
+#Pokedex {
+	height:400px;
+	width: 692px;
+	background-color:white;
+	margin-left: 10px;
+	margin-right:10px;
+	margin-top:10px;
+	border: 1px solid red;
+	overflow-y: scroll;
 }
 
 #NameBar {
@@ -107,4 +127,14 @@ select {
 }
 input {
 	margin-left: 4px;
+}
+
+figure {
+	width:132px;
+	height:132px;
+	display: inline-block;
+}
+
+figcaption {
+	float: center;
 }

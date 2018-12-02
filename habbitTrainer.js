@@ -78,6 +78,7 @@ function addTDLTask() {
 
 function finishTask(taskId){
     /*remove the element */
+    totalCaught++; //we caught one!
     var taskId = "task" + taskId;
     var removing = document.getElementById(taskId);
    
@@ -93,7 +94,7 @@ function finishTask(taskId){
     var testCatch = Math.floor(Math.random()* 4 ) + 1; //returns 1 to 4
     if(testCatch <= difficulty) {
         /*Get a pokemon!*/
-        var randomPokemon = Math.floor(Math.random() * 300) +1;     
+        var randomPokemon = Math.floor(Math.random() * 300) +1; 
         var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + randomPokemon + "/";
       
         $.getJSON(pokeURL, function(data){
@@ -121,8 +122,41 @@ function finishTask(taskId){
             captionDiv.innerHTML= '';
             captionDiv.appendChild(caption);
 
-
             //now update the pokemon Map for our pokedex
+            if(pokemonMap.get(pokemonName) != undefined) {
+                console.log("got duplicate!")
+                var curCount = pokemonMap.get(pokemonName);
+                pokemonMap.set(pokemonName, curCount+1);
+
+                //update pokedex count
+                var existingPokemon = document.getElementById(pokemonName);
+                var caption = document.createElement("figcaption");
+                caption.appendChild(document.createTextNode("" + pokemonName + " count: " +pokemonMap.get(pokemonName)));
+                existingPokemon.removeChild(existingPokemon.childNodes[1]);
+                existingPokemon.appendChild(caption);
+            }
+            else { //set it if it isnt there yet
+                pokemonMap.set(pokemonName,1); 
+                uniquePokemon++;
+
+                //add to the pokedex
+                var image = document.createElement("img");
+                image.src = imgURL;
+                image.alt = "could not load pokemon";
+                //image.id = "pokemonImage"; dont need styling to make smaller
+                
+                var caption = document.createElement("figcaption");
+                caption.appendChild(document.createTextNode("" + pokemonName + " count: 1"));
+                caption.id= pokemonName + "Caption";
+
+                var figure = document.createElement("figure");
+                figure.appendChild(image);
+                figure.appendChild(caption);
+                figure.id=pokemonName;
+
+                var pokedexDiv = document.getElementById("PokedexContent");
+                pokedexDiv.appendChild(figure);
+            }
         });
     }
     else { //no pokemon was found because difficulty not high enough
