@@ -1,8 +1,13 @@
+div, p {
+	font-family: 'Unna', serif;
+}
+
 #pageWrapper {
 	height:100%;
 	width:100%;
 	border: 1px solid black;
 }
+
 #whiteSpaceBar {
 	width: 100%;
 	height:25px;
@@ -10,16 +15,18 @@
 	color:white;
 	text-transform: uppercase;
 }
+
 #logo {
 	height:25px;
 	width:25px;
 }
+
 #navBar {
 	width:100%;
-	height:10px; /*Set to 35px to add navBar buttons*/
+	height:20px; /*Set to 35px to add navBar buttons*/
 	background-color: #D46A6A;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: flex-end;
 	border: 1px solid white;
 }
 
@@ -30,6 +37,13 @@
 	outline-offset-top: 10px;
 	padding-left: 10px;
 	border: 1px solid white;
+
+}
+
+#uniqueCount, #totalCount {
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 a {
@@ -79,14 +93,17 @@ a {
 	width:100%;
 	height:20px;
 }
+
 #tdlAddField{
 	height:20px;
 	width:270px;
 }
+
 #ToDoListContent{
 	height:360px;
 	width:270px;
 }
+
 .tdlTask {
 	width:270px;
 	height:40px;
@@ -121,10 +138,12 @@ a {
 #radarCaption, #thePicture {
 	text-align:center;
 }
+
 select {
 	margin-top: 2px;
 	height:20px;
 }
+
 input {
 	margin-left: 4px;
 }
